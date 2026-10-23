@@ -1,9 +1,9 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "framework": null,
-  "buildCommand": "echo 'Using prebuilt Flutter web output'",
+  "buildCommand": "curl -fsSL https://storage.googleapis.com/flutter_infra_release/releases/stable/linux/flutter_linux_3.24.5-stable.tar.xz | tar -xJ && export PATH=\"$PATH:$(pwd)/flutter/bin\" && flutter config --enable-web --no-analytics && flutter precache --web && flutter pub get && flutter build web --release --base-href /",
   "outputDirectory": "build/web",
-  "installCommand": "echo 'skip'",
+  "installCommand": "echo 'Flutter deps handled in buildCommand'",
   "rewrites": [
     {
       "source": "/((?!assets/|canvaskit/|icons/|fonts/|.*\\..*).*)",
